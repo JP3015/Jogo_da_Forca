@@ -52,7 +52,9 @@ def erro(erros):
    
 
 def checar(erros):
+    string = "".join(str(x) for x in palavra)
     if len(letra_palavra) == 0:
+        print("Você encontrou a palavra " + string)
         print("\nParabéns, você ganhou!")
         print("       ___________      ")
         print("      '._==_==_=_.'     ")
@@ -67,7 +69,6 @@ def checar(erros):
         
         
     elif erros == 7:
-        string = "".join(str(x) for x in palavra)
         print("Você foi enforcado! A palavra era " + string)
 
 
