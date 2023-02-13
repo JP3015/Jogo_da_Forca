@@ -81,10 +81,9 @@ while opcao != 2:
 
     erros = 0
     letras = []
-    palavra = random.choice(open(r"C:\Users\User\Desktop\Jogo_Forca\palavras.txt").readline().split())
+    palavra = random.choice(open(r"palavras.txt").readline().split())
     letra_palavra = set(palavra)
     letras_acertadas = ["_"] * len(palavra)
-    print(palavra)
     
     
     while erros != 7 and len(letra_palavra) != 0:
@@ -95,7 +94,7 @@ while opcao != 2:
 
         print("\n")
 
-        tentativa = input("Escolha uma letra: ")
+        tentativa = input("Escolha uma letra: ").lower()
 
         while len(tentativa) > 1 or tentativa in letras:    
             tentativa = input("Você digitou mais de uma letra ou digitou uma letra que já foi escolhida, escolha uma outra letra: ")
@@ -104,7 +103,7 @@ while opcao != 2:
         letras.append(tentativa)
 
         if (tentativa in palavra):
-            print("Acertou")
+            print("\nAcertou!!")
             letra_palavra.remove(tentativa)
             for i in range(len(palavra)):
                     if palavra[i] == tentativa:
@@ -124,7 +123,7 @@ while opcao != 2:
         opcao = int(input(">>> "))
 
         if opcao == 1:
-            print("\nReiniciando....")
+            print("\nReiniciando....\n")
             break
         elif opcao == 2:
             print("\nSaindo.......")
